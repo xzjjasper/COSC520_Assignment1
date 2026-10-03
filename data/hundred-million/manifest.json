@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "generator": "base62-feistel-v2",
+  "created_unix": 1791000277.518708,
+  "n": 100000000,
+  "universe_size": 100000000,
+  "queries_per_kind": 10000,
+  "seed": 42,
+  "login_length": 7,
+  "encoding": "ascii",
+  "newline": "LF",
+  "alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+  "namespace_size": 3521614606208,
+  "uniqueness": "four invertible alternating modular Feistel updates on base-62 IDs",
+  "insertion_ids": [
+    0,
+    100000000
+  ],
+  "miss_ids": "outside [0, universe_size)",
+  "files": {
+    "logins.txt": {
+      "bytes": 800000000,
+      "sha256": "8f69e516b16dde2067cd5dcd2bbc3b4f241ece5008e17d49102a58e9afaece31"
+    },
+    "hits.txt": {
+      "bytes": 80000,
+      "sha256": "67109d201926a43cce5bfce4af88d58298eceba59e08a03edc65d6dbafb16ebb"
+    },
+    "misses.txt": {
+      "bytes": 80000,
+      "sha256": "22dc6e1bfcda5f651480d14d950d2ec4bc7cf96352d82b28b068fbfe00401b3f"
+    }
+  }
+}
