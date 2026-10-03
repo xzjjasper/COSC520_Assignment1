@@ -1,0 +1,149 @@
+{
+  "created_utc": "2026-10-03T01:27:03.698390+00:00",
+  "config": {
+    "sizes": [
+      1000,
+      10000,
+      100000,
+      1000000,
+      10000000,
+      100000000
+    ],
+    "algorithms": [
+      "linear",
+      "binary",
+      "hash",
+      "bloom",
+      "cuckoo"
+    ],
+    "repeats": 3,
+    "workers": 2,
+    "queries_per_kind": 1000,
+    "warmup_queries": 100,
+    "query_batch_size": 64,
+    "seed": 42,
+    "login_length": 7,
+    "bloom_false_positive_rate": 0.01,
+    "cuckoo_bucket_size": 4,
+    "cuckoo_fingerprint_bits": 8,
+    "cuckoo_max_kicks": 500,
+    "cuckoo_target_load": 0.9,
+    "memory_budget_bytes": 12884901888
+  },
+  "python": "3.12.12 (main, Dec  9 2025, 19:05:33) [Clang 21.1.4 ]",
+  "executable": ".venv/bin/python",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "logical_cpus": 14,
+  "physical_ram_bytes": 51539607552,
+  "available_ram_bytes_at_metadata": 17811079168,
+  "python_hash_seed": "42",
+  "source_sha256": {
+    "__init__.py": "67e14f5f831e7f8a801230c577c5320ea68f09dfa1f869710fb056bedaeef81e",
+    "benchmark.py": "988a952fd9d23a3f7ddf617aab1aef01dea11bbc8862447c4cc4ac84870e68a1",
+    "bloom_filter.py": "af1bc484976d5b8d87cc0a55c2dcdf9664aae990e406c33b460f43f4f44cda7c",
+    "cuckoo_filter.py": "1b32666dfd3b3fcc9e652b57a3321643b151b0102049ae6848565d23b0b72fc5",
+    "datasets.py": "7c56f72b63648eb9f9a9431791cd689b95b11a72d5e15100279d42481a121d2f",
+    "hash_table.py": "70b291b06d3ad081338a8d5fa624279b8c27314e87911591e5f8277b064d12ab",
+    "hashing.py": "7953942309dee4948b4f68fc70266d2ca0cfc016bbe8006a4ee97e57d7ce6fea",
+    "interfaces.py": "9580aa4b880d3eb30e98953a6cc9cf724c7b003c8ed9cebf0e0fd4859e3b67be",
+    "linear_search.py": "f507d3a34607b70f31ff4cfa7bf61fa6e4e542f287962f6d4ecdd49dd4a88152",
+    "plotting.py": "c67b65df2a2e35bab7a60446ed0202a58dd80d9cc25ae09bbffba483c9b0b86e",
+    "sorted_array.py": "81b68dd7743885e5fc8992b52bd75f4f8b70f004a6c49b456b50d98e568d6a51",
+    "timing.py": "b817f237138f4173d79c23f1aa0993f4e7fe6852c4327b0445f0c7712c8592cb"
+  },
+  "dataset": {
+    "directory": "data/billion",
+    "manifest": {
+      "version": 2,
+      "generator": "base62-feistel-v2",
+      "created_unix": 1790989428.6880279,
+      "n": 1000000000,
+      "universe_size": 1000000000,
+      "queries_per_kind": 10000,
+      "seed": 42,
+      "login_length": 7,
+      "encoding": "ascii",
+      "newline": "LF",
+      "alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+      "namespace_size": 3521614606208,
+      "uniqueness": "four invertible alternating modular Feistel updates on base-62 IDs",
+      "insertion_ids": [
+        0,
+        1000000000
+      ],
+      "miss_ids": "outside [0, universe_size)",
+      "files": {
+        "logins.txt": {
+          "bytes": 8000000000,
+          "sha256": "64acd9096b5a586dd740648a21e5d7c233c2d692af6237c88ecbc95a9021587f"
+        },
+        "hits.txt": {
+          "bytes": 80000,
+          "sha256": "367b5a5109170c07e3dfe6213f7ec5c894eefa4d98dbf4306f1ec48756b7f2eb"
+        },
+        "misses.txt": {
+          "bytes": 80000,
+          "sha256": "0b55cc7cdc4d050187df748651e0e12bfe230ecac3a5ceee7a50f10aa5d6e246"
+        }
+      }
+    }
+  },
+  "parallelism": {
+    "workers": 2,
+    "mode": "spawn processes",
+    "memory_budget": "per-job cap plus summed reservations limited to 70% of available RAM at each size; large jobs may run alone",
+    "timing_note": "parallel timings include competition for CPU/cache/memory bandwidth; use workers=1 for isolated comparisons"
+  },
+  "parameters_by_size": {
+    "1000": {
+      "cuckoo_bucket_count": 512,
+      "cuckoo_actual_load": 0.48828125,
+      "bloom_bits": 9586,
+      "bloom_hashes": 7
+    },
+    "10000": {
+      "cuckoo_bucket_count": 4096,
+      "cuckoo_actual_load": 0.6103515625,
+      "bloom_bits": 95851,
+      "bloom_hashes": 7
+    },
+    "100000": {
+      "cuckoo_bucket_count": 32768,
+      "cuckoo_actual_load": 0.762939453125,
+      "bloom_bits": 958506,
+      "bloom_hashes": 7
+    },
+    "1000000": {
+      "cuckoo_bucket_count": 524288,
+      "cuckoo_actual_load": 0.476837158203125,
+      "bloom_bits": 9585059,
+      "bloom_hashes": 7
+    },
+    "10000000": {
+      "cuckoo_bucket_count": 4194304,
+      "cuckoo_actual_load": 0.5960464477539062,
+      "bloom_bits": 95850584,
+      "bloom_hashes": 7
+    },
+    "100000000": {
+      "cuckoo_bucket_count": 33554432,
+      "cuckoo_actual_load": 0.7450580596923828,
+      "bloom_bits": 958505838,
+      "bloom_hashes": 7
+    }
+  },
+  "lookup_timing": "perf_counter_ns around contains loop and result-list allocation; shuffled same-category batches; excluded setup/warmup/validation/I/O/size measurement",
+  "build_timing": "end-to-end constructor including input iteration and disk decoding/generation, allocation and sorting/insertion",
+  "size_definition": "retained Python object size including containers and unique stored strings; excludes external input/query data, classes, peak memory and process RSS",
+  "hash_cache": "All query strings are prehashed outside timing, standardizing Python's cached string-hash state; timings describe steady-state lookup, not first hashing of freshly decoded strings",
+  "correctness_scope": "all timed queries; not exhaustive validation of every inserted key",
+  "dataset_checksum_policy": "insertion file size and deterministic samples checked at load; full SHA256 requires explicit verify_checksum=True",
+  "worker_pids": [
+    6012,
+    6013
+  ],
+  "completed_utc": "2026-10-03T03:07:23.904329+00:00",
+  "shared_copy_path_note": "Paths are relative to the shared project root; measurement values and source checksums are unchanged."
+}

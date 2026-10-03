@@ -1,0 +1,28 @@
+[project]
+name = "cosc520-assignment1"
+version = "0.1.0"
+description = "COSC 520 Assignment 1: Login checker implementation scaffold"
+requires-python = ">=3.12,<3.13"
+dependencies = ["matplotlib>=3.9,<4", "numpy>=2,<3", "psutil>=7,<8"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<10",
+    "jupyterlab>=4,<5",
+    "ipykernel>=6,<8",
+    "nbformat>=5,<6",
+    "nbclient>=0.10,<1",
+    "nbconvert>=7,<8",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+xfail_strict = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cosc520_assignment1"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
